@@ -1,5 +1,5 @@
 This repo includes the corresponding data as well as a Python-Script which is a Random Forest based classifier to predict whether a mushroom is eatable our poisonous.
 It can be shown, that a simple Random Forest Model is able to solve this prediction problem with an accuracy of over 0.98.
-To compare the model with an model based on a artificial neural network there is a second python script "ANN.py" which solve that problem with a similar proper result.
+To compare the model with a model based on a artificial neural network, there is a second python script "ANN.py" which solve that problem with a similar well result.
 
 The dataset which was used is from kaggle: https://www.kaggle.com/uciml/mushroom-classification?select=mushrooms.csv
