@@ -31,7 +31,8 @@ X = []
 for i in tqdm(range(len(df))):
 
     ### Some of attribute values are not defined and declared as "?"
-    ### That's why we transform these to NAN that can be handled by scikit learn
+    ### The algorithm can only bussy numerical values. Therefore we replace "?" by NAN at first
+    ### and replace the NAN with statistical values in an other stepp.
     vec = [MAP[val] if val != '?' else np.nan for val in df.iloc[i][1:]]   
      
     X.append(vec)
@@ -45,8 +46,8 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.8)
 
  
 ### Because some of the data has include non defined attribut values which we 
-### have transformed to np.nan, we need to define a strategy to deal with that.
-### The SimpleInputer replaces nan values by the mean value of all values
+### have transformed to NAN values, we need to define a strategy to deal with that.
+### The SimpleImputer replaces nan values by the mean value of all values
 ### NOTICE: However, we should ask ourselves whether this strategy is the best 
 ### in this context. After all, it's all about poisonous mushrooms...
 
